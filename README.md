@@ -1,6 +1,9 @@
-# BeepBoop
-A simple, yet funny DiscordBot made in Javascript
-
+<div align="center">
+    <img src="assets/logo.png">
+    <br/>
+    <p><b>A simple, yet funny DiscordBot made in Javascript</b></p>
+    <a href="https://github.com/nguyenphuminh/BeepBoop/blob/master/LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg"/></a>
+</div>
 
 ## Install and setup
 ### Requirements
