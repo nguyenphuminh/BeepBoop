@@ -55,7 +55,7 @@ client.on('message', message =>{
 			message.channel.send("Hello there, human thingy kinda stuffs...");
 		}
 	} else if (command == "help"){
-		message.channel.send("Beep boop beep boop, hello fellow human. \nTo use me, type: beepboop [command] \n\nCommands: \nsaysomething    laugh    tellastory    sendsomegif    goodbye    hello    showdate    help \n\nSpecial commands: cf [side] \nhead    tail");
+		message.channel.send("Beep boop beep boop, hello fellow human. \nTo use me, type: beepboop [command] \n\nCommands: \nsaysomething    laugh    tellastory    sendsomegif    goodbye \nkill    hello    showdate    help    kiss \n\nSpecial commands: cf [side] \nhead    tail");
 	} else if (command == "cf head"){
 		var a = Math.floor(Math.random() * 2) + 0;
 		if (a==0) {
@@ -87,7 +87,12 @@ client.on('message', message =>{
 		var a = Math.floor(Math.random() * 101) + 0;
 		var b = a.toString();
 		message.channel.send(b + "% of love");
+	} else if (command.substr(0,4) == 'kill') {
+		message.channel.send("https://media.giphy.com/media/el2RCIJ9tibK2JuEET/giphy.gif" + "\n" + command.slice(4) + " terminated!");
+	} else if (command.substr(0,4) == 'kiss') {
+		message.channel.send("https://media.giphy.com/media/W2KQ2RKAOCtvCTewdR/giphy.gif" + "\nMoah, " + command.slice(4));
 	}
 });
+
 
 client.login(/*Enter token here*/);
