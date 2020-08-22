@@ -69,4 +69,4 @@ client.on('message', message =>{
 });
 
 
-client.login("NzQ2Mzg3MTE4MDYyMDQzMjA2.Xz_lLA.MKnnUt7c1LLJ3F00FnyTfHZrVLM");
+client.login(/*Enter token here*/);
