@@ -131,4 +131,4 @@ client.on('message', message =>{
 });
 
 
-client.login("NzQ2Mzg3MTE4MDYyMDQzMjA2.Xz_lLA.yysIIei6kmFbzHzHuEr0U9HWmto");
+client.login("Enter token here");
