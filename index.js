@@ -5,21 +5,16 @@ const client = new Discord.Client();
 const prefix = "beepboop ";
 
 client.once('ready', () => {
-	console.log("BeepBoop is online");
+	console.log("BeepBoop is online!");
 })
 
 
 client.on('message', message =>{
 
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
-
-
 	const args = message.content.slice(prefix.length);
 	const command = args.toLowerCase();
-
 	console.log(command);
-
-
 	if (command == "showdate"){
 		var date = new Date();
 		var special = date.getMonth() + 1;
@@ -55,7 +50,7 @@ client.on('message', message =>{
 			message.channel.send("Hello there, human thingy kinda stuffs...");
 		}
 	} else if (command == "help"){
-		message.channel.send("Beep boop beep boop, hello fellow human. \nTo use me, type: beepboop [command] \n\nCommands: \nsaysomething    laugh    tellastory    sendsomegif    goodbye \nkill    hello    showdate    help    kiss \n\nSpecial commands: cf [side] \nhead    tail");
+		message.channel.send("Beep boop beep boop, hello fellow human. \nTo use me, type: beepboop [command] \n\nCommands: \n\nsaysomething    laugh    tellastory    sendsomegif    goodbye \nkill    hello    showdate    help    kiss \n\nSpecial commands: \n\ncf [side] \nhead    tail \n\nrps [choice] \nrock    paper    scissor   \n\nguessto100 [number]    guessto10 [number]");
 	} else if (command == "cf head"){
 		var a = Math.floor(Math.random() * 2) + 0;
 		if (a==0) {
@@ -91,8 +86,48 @@ client.on('message', message =>{
 		message.channel.send("https://media.giphy.com/media/el2RCIJ9tibK2JuEET/giphy.gif" + "\n" + command.slice(4) + " terminated!");
 	} else if (command.substr(0,4) == 'kiss') {
 		message.channel.send("https://media.giphy.com/media/W2KQ2RKAOCtvCTewdR/giphy.gif" + "\nMoah, " + command.slice(4));
+	} else if (command.substr(0,10) == "guessto100"){
+		var a = Math.floor(Math.random() * 101) + 0;
+		if (command.slice(11) == a) {
+			message.channel.send("Well done, you have done the impossible!");
+		} else {
+			message.channel.send("You can not guess muhaha");
+		}
+	} else if (command.substr(0,9) == "guessto10"){
+		var a = Math.floor(Math.random() * 11) + 0;
+		if (command.slice(10) == a) {
+			message.channel.send("Well done, you have done the impossible!");
+		} else {
+			message.channel.send("You can not guess muhaha");
+		}
+	} else if (command == "rps scissor"){
+		var a = Math.floor(Math.random() * 3) + 0;
+		if (a==0){
+			message.channel.send("Scissor! \nIt's a draw!");
+		} else if (a==1){
+			message.channel.send("Rock! \nYou lose!");
+		} else if (a==2){
+			message.channel.send("Paper! \nYou win!");
+		}
+	} else if (command == "rps rock"){
+		var a = Math.floor(Math.random() * 3) + 0;
+		if (a==0){
+			message.channel.send("Scissor! \nYou win!");
+		} else if (a==1){
+			message.channel.send("Rock! \nIt's a draw!");
+		} else if (a==2){
+			message.channel.send("Paper! \nYou lose!");
+		}
+	} else if (command == "rps paper"){
+		var a = Math.floor(Math.random() * 3) + 0;
+		if (a==0){
+			message.channel.send("Scissor! \nYou lose!");
+		} else if (a==1){
+			message.channel.send("Rock! \nYou win!");
+		} else if (a==2){
+			message.channel.send("Paper! \nIt's a draw");
+		}
 	}
 });
-
 
 client.login(/*Enter token here*/);
